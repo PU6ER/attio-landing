@@ -1,0 +1,282 @@
+@import 'variables';
+
+body {
+	font-family: $font-stack;
+	color: $primary-color;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.btn--primary {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: fit-content;
+	height: 40px;
+	border-radius: 12px;
+	padding: 0.5rem 1rem;
+	color: white;
+	background: #000;
+	text-decoration: none;
+}
+.btn--secondary {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: fit-content;
+	height: 40px;
+	border-radius: 12px;
+	padding: 0.5rem 1rem;
+	color: #000;
+
+	background: #fff;
+	border: 1px solid #edeef0;
+	text-decoration: none;
+}
+
+.header {
+	box-sizing: border-box;
+	max-width: 1440px;
+	width: 100%;
+	padding: 1rem 1.5rem;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo img {
+		max-width: 150px;
+	}
+	&__wrapper {
+		display: flex;
+		gap: 64px;
+		height: 40px;
+		align-items: center;
+	}
+	&__nav {
+		&-list {
+			display: flex;
+			gap: 32px;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		&-link {
+			color: #000;
+			text-decoration: none;
+			font-weight: 500;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__actions {
+		display: flex;
+		gap: 12px;
+
+		// & .header__btn {
+		// 	padding: 0.5rem 1rem;
+		// 	border-radius: 4px;
+		// 	text-decoration: none;
+		// 	color: white;
+
+		// 	&--primary {
+		// 		background-color: $secondary-color;
+		// 	}
+
+		// 	&--secondary {
+		// 		background-color: white;
+		// 		color: $primary-color;
+		// 	}
+		// }
+	}
+
+	&__mobile-menu-icon {
+		display: none;
+		cursor: pointer;
+
+		&-bar {
+			display: block;
+			width: 25px;
+			height: 3px;
+			background-color: white;
+			margin: 5px 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__nav {
+			display: none;
+		}
+
+		&__mobile-menu-icon {
+			display: block;
+		}
+	}
+}
+
+.main {
+	box-sizing: border-box;
+	max-width: 1440px;
+	width: 100%;
+	.hero {
+		// background: url('./assets/images/hero-bg.jpg') no-repeat center center;
+		background-size: cover;
+		color: #000;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 6rem;
+        margin-bottom: 4rem;
+		&__container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			img {
+				max-width: 1252px;
+			}
+		}
+		&__title {
+			width: 900px;
+			font-size: 5.75rem;
+			text-align: center;
+			font-weight: bold;
+			margin: 0;
+			margin-bottom: 2rem;
+		}
+
+		&__description {
+			width: 550px;
+			font-size: 1.375rem;
+			text-align: center;
+			margin: 0;
+			margin-bottom: 2rem;
+		}
+		&__links {
+			display: flex;
+			gap: 0.75rem;
+		}
+
+		// &__btn {
+		// 	margin: 0.5rem;
+
+		// 	&--primary {
+		// 		background-color: $secondary-color;
+		// 		color: white;
+		// 		padding: 0.75rem 1.5rem;
+		// 		border-radius: 4px;
+		// 		text-decoration: none;
+		// 	}
+
+		// 	&--secondary {
+		// 		background-color: white;
+		// 		color: $primary-color;
+		// 		padding: 0.75rem 1.5rem;
+		// 		border-radius: 4px;
+		// 		text-decoration: none;
+		// 	}
+		// }
+	}
+	.companies {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+            align-items: center;
+		}
+        &__row-first{
+            display: flex;
+            gap: 5.5rem
+        }
+        &__row-second{
+            display: flex;
+            gap: 6.85rem
+        }
+	}
+
+	.features {
+		padding: 3rem 1rem;
+		background-color: #f9f9f9;
+
+		&__title {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		&__grid {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 2rem;
+
+			&__item {
+				background-color: white;
+				padding: 1.5rem;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+		}
+
+		@media (min-width: 768px) {
+			&__grid {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+}
+
+.footer {
+	background-color: #333;
+	color: white;
+	padding: 2rem 1rem;
+
+	&__links {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+
+		&__column {
+			flex: 1;
+
+			&-title {
+				margin-bottom: 1rem;
+			}
+
+			&__list {
+				list-style: none;
+				padding: 0;
+
+				&-item {
+					margin-bottom: 0.5rem;
+
+					& .footer__link {
+						color: white;
+						text-decoration: none;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		text-align: center;
+
+		& .footer__link {
+			color: white;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
